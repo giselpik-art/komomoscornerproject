@@ -1,0 +1,139 @@
+@font-face {
+    font-family: "Fonts"; 
+    src: url("AlteHaasGroteskBold.ttf") format("truetype"); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "cat"; 
+    src: url("copilme/Copilme-Regular.ttf") format("truetype"); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.body {
+  background-color: #f0f2f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 100px 0 500px; 
+}
+
+.scroll-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 90px; 
+}
+
+/* Wider and bolder Title Box */
+.title-box {
+  width: 500px; /* Increased from 400px */
+  padding: 35px;
+  background: #1a1a1a;
+  color: white;
+  text-align: center;
+  font-size: 1.8rem; /* Bigger font */
+  font-weight: 700;
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+
+.description-box {
+  width: 1200px;
+  background: white;
+  margin-top: 25px;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+  box-sizing: border-box;
+  
+  
+}
+
+
+
+.text{
+    color: #ffffff;
+}
+
+.text-indent{
+    text-indent: 40px;
+    color: #ffffff;
+}
+
+.title {
+    margin-bottom: -800px;
+    height:100px;
+    width: auto;
+    display: block;
+}
+
+.title:hover {
+    transform: scale(1.05);
+}
+
+
+ .reveal-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+   
+}
+
+/* Container utama untuk setiap section */
+.judul-overlap-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 100px; 
+}
+
+
+.header-tengah {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+}
+
+
+.judul-img-main {
+    max-width: 520px;
+    height: auto;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+}
+
+
+.card {
+    position: relative;
+    z-index: 10;
+    margin-top: 45px;
+    padding-top: 70px !important;
+    width: 100%;
+    max-width: 1000px;
+}
+
+
+.judul-overlap-container:hover .judul-img-main {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.first-box {
+    margin-top: 150px;
+}
+
+
+.scroll-container {
+    padding-top: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px; 
+}
