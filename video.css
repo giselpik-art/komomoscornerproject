@@ -1,0 +1,233 @@
+@font-face {
+    font-family: "Fonts"; 
+    src: url("AlteHaasGroteskBold.ttf") format("truetype"); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "cat"; 
+    src: url("copilme/Copilme-Regular.ttf") format("truetype"); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fff8e7;
+    background-image: url("bgcloud.gif");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: "cat", sans-serif;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   
+   
+    background-image: url("bgcloud.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+
+#loading-screen::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
+
+.loading-content {
+    text-align: center;
+}
+
+
+#loading-img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+
+#progress-text {
+    font-family: "kucing", sans-serif;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+
+.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.boxes-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    padding-top: 150px; 
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.image-section {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+    width: 100%;
+    pointer-events: none;
+    text-align: center;
+}
+
+.featured-img {
+    max-width: 800px; 
+    width: 100%;
+    display: block;
+    margin: 0 auto -90px auto; 
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.featured-img:hover { transform: scale(1.05); }
+
+.text-box-wrapper {
+    width: 100%;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+.text-box {
+    background-color: rgba(121, 98, 168, 0.65); 
+    padding: 40px; 
+    border-radius: 30px;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.first-box .text-box { padding-top: 110px; }
+
+.text-box:hover {
+    transform: scale(1.02);
+    background-color: rgba(121, 98, 168, 0.8);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.text-box h3 {
+    font-family: "cat", sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.info-report {
+    text-align: left; 
+}
+
+.report-title {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.report-section {
+    margin-bottom: 25px;
+}
+
+.report-section h4 {
+    font-family: "cat", sans-serif;
+    margin-bottom: 10px;
+    color: #e8f5bd; 
+}
+
+.report-section p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.report-section ul, .report-section ol {
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+.video-grid, .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+}
+
+.info-grid { margin-top: 10px; }
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    background: #000;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.video-container.horizontal {
+    aspect-ratio: 16 / 9;
+}
+
+.video-container.vertical {
+    aspect-ratio: 9 / 16;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+
+@media (max-width: 900px) {
+    .video-grid, .info-grid { grid-template-columns: 1fr; }
+    .featured-img { max-width: 90%; margin-bottom: -60px; }
+    .first-box .text-box { padding-top: 80px; }
+}
