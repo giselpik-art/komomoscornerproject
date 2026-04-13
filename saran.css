@@ -1,0 +1,196 @@
+
+@font-face {
+    font-family: "Fonts"; 
+    src: url("AlteHaasGroteskBold.ttf") format("truetype"); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "cat"; 
+    src: url("copilme/Copilme-Regular.ttf") format("truetype"); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "itcat"; 
+    src: url("copilme/Copilme-Italic.ttf") format("truetype"); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "kucing"; 
+    src: url("copilme/Copilme-Bold.ttf") format("truetype"); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fff8e7;
+    background-image: url("bgcloud.gif");
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #556b8d;
+    overflow-x: hidden;
+}
+
+
+.content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.judul-overlap-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 70px;
+    cursor: pointer;
+}
+
+.first-box {
+    margin-top: 100px;
+}
+
+.header-tengah {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    transition: transform 0.3s ease;
+}
+
+.judul-img-main {
+    max-width: 300px;
+    height: auto;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.kotak-konten-custom {
+    background: linear-gradient(135deg, rgba(103, 85, 203, 0.6), rgba(146, 74, 168, 0.6));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 5px solid rgba(255, 255, 255, 0.772);
+    border-radius: 40px;
+    padding: 60px 50px 40px 50px;
+    height: auto;
+    min-height: 250px;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 100px 100px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.first-box .kotak-konten-custom {
+    padding-top: 100px;
+}
+
+.kotak-konten-custom.simplified {
+    padding-top: 40px;
+}
+
+.judul-overlap-container:hover .kotak-konten-custom {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.3);
+}
+
+.judul-overlap-container:hover .header-tengah {
+    transform: translate(-50%, -60%);
+}
+
+.judul-overlap-container:hover .judul-img-main {
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.3));
+    transform: scale(1.05);
+}
+
+.judul-h3-custom {
+    font-family: "cat", sans-serif;
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.kotak-konten-custom p {
+    font-family: "cat", sans-serif;
+    color: white;
+    line-height: 1.8;
+    font-size: 1.15rem;
+    text-align: justify;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #854b4b;
+    font-weight: bold;
+    font-family: "cat", sans-serif;
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    
+    background-image: url("bgcloud.gif");
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+#loading-screen::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
+.loading-content {
+    text-align: center;
+}
+
+#loading-img {
+    width: 120px; 
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#progress-text {
+    font-family: "kucing", sans-serif;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
